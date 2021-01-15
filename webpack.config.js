@@ -19,9 +19,9 @@ const DIR_DIST = path.resolve(DIR_PROJECT, 'dist');
 const CONFIG = {
     target: 'web', // 默认目标是React Web项目
     // target: 'electron-renderer', // electron渲染进程支持. 可以全局安装electron, 然后link到本地, 以提供相应版本的electron类型支持.
-    mode: 'none', // 开发时不建议使用默认值"production"
-    // mode: 'development', // 开发模式
-    // devtool: 'source-map', // 生成main.js.map源码映射文件, 以支持.ts源码的断点调试。还可以使用inline-source-map
+    // mode: 'none', // 开发时不建议使用默认值"production"
+    mode: 'development', // 开发模式
+    devtool: 'source-map', // 生成main.js.map源码映射文件, 以支持.ts源码的断点调试。还可以使用inline-source-map
     entry: {
         main: path.resolve(DIR_SRC),
     },
@@ -32,9 +32,10 @@ const CONFIG = {
     },
     module: {
         rules: [
-            { test: /\.css$/, use: [$style_loader, $css_loader + '?modules'] },
+            { test: /\.global\.css$/, use: [$style_loader, $css_loader] },
+            { test: /(?<!\.global)\.css$/, use: [$style_loader, $css_loader + '?modules'] },
             { test: /\.(html|png|jpg|ico)$/, use: $file_loader + '?context=src&name=[path][name].[ext]' },
-            { test: /\.tsx?$/, exclude: /node_modules/, use: $babel_loader }, // @BABEL_LOADER及其预设由rds提供
+            { test: /\.(js|ts)x?$/, exclude: /node_modules/, use: $babel_loader }, // @BABEL_LOADER及其预设由rds提供
         ],
     },
     externals: {
@@ -43,7 +44,7 @@ const CONFIG = {
         '@material-ui/core': 'MaterialUI',
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
         alias: {
             '@': DIR_SRC,
         },

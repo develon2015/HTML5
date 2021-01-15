@@ -4,17 +4,18 @@
     "scripts": {
         "setup": "rds --eject && yarn add -D @types/react @types/react-dom",
         "start:dev": "webpack serve",
-        "build": "wbepack --env production",
-        "rebuild": "wbepack --env rebuild"
+        "build": "webpack --env production",
+        "rebuild": "webpack --env rebuild"
     },
     "license": "MIT",
     "devDependencies": {
+        "@material-ui/core": "^4.11.2",
+        "@material-ui/icons": "^4.11.2",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
         "@types/react-router-dom": "^5.1.7"
     },
     "dependencies": {
-        "@material-ui/core": "^4.11.2",
         "react-router-dom": "^5.2.0"
     }
 }
