@@ -45,7 +45,12 @@ class RouterManager {
 var manager: RouterManager = new RouterManager();
 manager.push({ category: '多媒体', dir: 'media' },
     [
-        { dirname: '视频' }
+        { dirname: 'video', path: 'video' },
+    ]
+);
+manager.push({ category: 'CSS', dir: 'css' },
+    [
+        { dirname: 'filter' }
     ]
 );
 export default manager;
