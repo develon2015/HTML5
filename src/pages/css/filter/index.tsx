@@ -10,7 +10,7 @@ function Grayscale() {
     });
     return (
         < >
-            <Tag> Graycale </Tag>
+            <Tag> Grayscale </Tag>
 
             <div ref={ref}>
                 <div style={{ background: 'green' }}>

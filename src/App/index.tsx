@@ -8,7 +8,13 @@ import Tag from '@/components/Tag';
 
 var cs = router.listCategory();
 
+/**
+ * Generate button list via category
+ */
 function Index() {
+    React.useEffect(() => {
+        document.title = 'Home';
+    });
     return (
         <div>
             {
@@ -85,6 +91,7 @@ staticContext: undefined
                                                  */
                                                 props => {
                                                     // console.log(props);
+                                                    document.title = page.title || page.dirname;
                                                     return (
                                                         <React.Suspense
                                                             fallback={<h2 style={{ textAlign: 'center', color: 'mediumseagreen' }}>正在加载页面...</h2>}>
@@ -109,6 +116,7 @@ staticContext: undefined
                 </ReactRouter.Switch>
 
                 < >
+                    {/* Home Button */}
                     <div style={{ position: 'fixed', bottom: 20, right: 20 }} >
                         <ReactRouter.Link to="/">
                             <IconButton style={{ border: 'solid 1px pink', borderRadius: 50 }} color="secondary" size="medium">

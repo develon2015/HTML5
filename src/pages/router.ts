@@ -46,11 +46,12 @@ var manager: RouterManager = new RouterManager();
 manager.push({ category: '多媒体', dir: 'media' },
     [
         { dirname: 'video', path: 'video' },
+        { dirname: 'video2canvas', title: 'canvas视频' },
     ]
 );
 manager.push({ category: 'CSS', dir: 'css' },
     [
-        { dirname: 'filter' }
+        { dirname: 'filter' },
     ]
 );
 export default manager;
