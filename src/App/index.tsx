@@ -4,6 +4,7 @@ import { Button, IconButton } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/HomeTwoTone';
 import router from '@/pages/router';
 import * as history from 'history';
+import Tag from '@/components/Tag';
 
 var cs = router.listCategory();
 
@@ -14,7 +15,7 @@ function Index() {
                 cs.map((it, index) => {
                     return (
                         <div key={index}>
-                            <h1 style={{ color: 'mediumvioletred' }}>{it}</h1>
+                            <Tag>{it}</Tag>
                             {
                                 router.map[it].pages.map((page, index) => {
                                     return (
@@ -39,16 +40,6 @@ export default class extends React.Component {
     render() {
         return (
             <ReactRouter.HashRouter>
-                < >
-                    <div style={{ position: 'fixed', bottom: 20, right: 20 }} >
-                        <ReactRouter.Link to="/">
-                            <IconButton style={{ border: 'solid 1px pink', borderRadius: 50 }} color="secondary" size="medium">
-                                <HomeIcon />
-                            </IconButton>
-                        </ReactRouter.Link>
-                    </div>
-                </>
-
                 <ReactRouter.Switch>
                     <ReactRouter.Route path="/" /*精确匹配首页*/exact>
                         <Index />
@@ -116,6 +107,16 @@ staticContext: undefined
                         </div>
                     </ReactRouter.Route>
                 </ReactRouter.Switch>
+
+                < >
+                    <div style={{ position: 'fixed', bottom: 20, right: 20 }} >
+                        <ReactRouter.Link to="/">
+                            <IconButton style={{ border: 'solid 1px pink', borderRadius: 50 }} color="secondary" size="medium">
+                                <HomeIcon />
+                            </IconButton>
+                        </ReactRouter.Link>
+                    </div>
+                </>
             </ReactRouter.HashRouter>
         );
     }
