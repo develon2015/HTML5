@@ -43,7 +43,7 @@ function CanvasVideo() {
     return (
         < >
             <div ref={div} style={{ width: '99vw', height, background: 'black' }}>
-                <canvas ref={canvas} />
+                <canvas ref={canvas} style={{ width: '100%', height: '100%' }} />
             </div>
 
             <Button onClick={() => {
