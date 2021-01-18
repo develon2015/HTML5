@@ -43,6 +43,7 @@ class RouterManager {
 }
 
 var manager: RouterManager = new RouterManager();
+manager.push({ category: '测试', dir: 'test' }, [{ dirname: 'Test' }]);
 manager.push({ category: '多媒体', dir: 'media' },
     [
         { dirname: 'video', path: 'video' },
