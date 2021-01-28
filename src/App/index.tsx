@@ -26,7 +26,7 @@ function Index() {
                                 router.map[it].pages.map((page, index) => {
                                     return (
                                         <Button key={index} size="large" color="secondary" variant="contained" onClick={() => {
-                                            var path = `/${page.path || page.dirname}`;
+                                            var path = `${router.map[it].category.dir}/${page.path || page.dirname}`;
                                             history.createHashHistory().push(path);
                                         }}>
                                             {page.title || page.dirname}
@@ -80,7 +80,7 @@ export default class extends React.Component {
                                     });
                                     var path = page.path || page.dirname;
                                     return (
-                                        <ReactRouter.Route key={index1 * index2} path={`/${path}`}>
+                                        <ReactRouter.Route key={index1 * index2} path={`/${router.map[it].category.dir}/${path}`}>
                                             {
                                                 /**
                                                  * Route的children可以是一个函数组件，接收以下参数：
