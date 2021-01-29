@@ -57,7 +57,8 @@ manager.push({ category: 'CSS', dir: 'css' },
 );
 manager.push({ category: '媒体', dir: 'canvas' },
     [
-        { dirname: 'number', title: 'canvas绘制线段' }
+        { dirname: 'number', title: 'canvas绘制线段' },
+        { dirname: 'ball', title: '球体' },
     ]
 );
 export default manager;
