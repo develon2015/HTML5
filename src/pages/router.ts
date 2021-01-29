@@ -59,6 +59,7 @@ manager.push({ category: '媒体', dir: 'canvas' },
     [
         { dirname: 'number', title: 'canvas绘制线段' },
         { dirname: 'ball', title: '球体' },
+        { dirname: 'text', title: '文本' },
     ]
 );
 export default manager;
