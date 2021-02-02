@@ -62,4 +62,9 @@ manager.push({ category: '媒体', dir: 'canvas' },
         { dirname: 'text', title: '文本' },
     ]
 );
+manager.push({ category: '布局', dir: 'layout' }, 
+    [
+        { dirname: 'flex', title: 'justify-content' },
+    ]
+);
 export default manager;
