@@ -67,4 +67,9 @@ manager.push({ category: '布局', dir: 'layout' },
         { dirname: 'flex', title: 'justify-content' },
     ]
 );
+manager.push({ category: '数学', dir: 'math' }, 
+    [
+        { dirname: 'geojson', title: 'geojson' },
+    ]
+);
 export default manager;
