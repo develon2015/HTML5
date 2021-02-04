@@ -72,4 +72,9 @@ manager.push({ category: '数学', dir: 'math' },
         { dirname: 'geojson', title: 'geojson' },
     ]
 );
+manager.push({ category: 'React', dir: 'react' }, 
+    [
+        { dirname: 'props', title: '子组件参数渲染' },
+    ]
+);
 export default manager;
